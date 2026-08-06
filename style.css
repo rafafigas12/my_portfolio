@@ -1,0 +1,397 @@
+/* ==========================================================================
+   1. VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
+   ========================================================================== */
+:root {
+    /* Paleta de Cores Minimalista */
+    --bg-color: #FAFAFA;
+    /* Fundo quase branco, mais suave que o branco puro */
+    --text-main: #1A1A1A;
+    /* Preto suave para o texto principal */
+    --text-light: #555555;
+    /* Cinza escuro para texto secundário */
+    --accent-color: #2563EB;
+    /* Azul vibrante para detalhes e links */
+    --accent-gradient: linear-gradient(135deg, #2563EB, #8B5CF6);
+    /* Detalhe especial */
+
+    /* Estrutura */
+    --container-width: 1100px;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Navegação suave ao clicar nos links do menu */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* Detalhe Especial: Cor da seleção de texto */
+::selection {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ==========================================================================
+   2. NAVEGAÇÃO (Efeito Glassmorphism)
+   ========================================================================== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* Efeito de vidro fosco no menu */
+    background: rgba(250, 250, 250, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+nav {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+/* Detalhe Especial: Linha animada ao passar o rato nos links do menu */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--text-main);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   3. SECÇÃO HERO
+   ========================================================================== */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 1rem;
+
+    /* Detalhe Especial: Título com gradiente */
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+}
+
+/* Botões com design minimalista */
+.cta-button,
+.download-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--text-main);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: var(--transition);
+    border: 1px solid var(--text-main);
+}
+
+.cta-button:hover,
+.download-btn:hover {
+    background-color: transparent;
+    color: var(--text-main);
+    transform: translateY(-3px);
+    /* Levanta ligeiramente */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   4. LAYOUT DAS SECÇÕES (Sobre, Skills, Projetos)
+   ========================================================================== */
+section {
+    padding: 6rem 0;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    letter-spacing: -1px;
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+/* Detalhe Especial: Cartões flutuam ligeiramente */
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.04);
+}
+
+.skill-category h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.skill-category ul {
+    list-style: none;
+    color: var(--text-light);
+}
+
+.skill-category li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+/* Ponto minimalista nas listas */
+.skill-category li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   5. PROJETOS (Gerados via JS)
+   ========================================================================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    position: relative;
+}
+
+.main-card-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-card-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    /* Detalhe Especial: Efeito de zoom na imagem ao passar o rato no cartão */
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-card-content {
+    padding: 2rem;
+    background: white;
+    position: relative;
+    z-index: 1;
+    /* Mantém o texto acima da imagem escalada */
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tags span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    background: rgba(37, 99, 235, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+}
+
+.project-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-right: 1.5rem;
+    transition: var(--transition);
+    position: relative;
+    z-index: 2;
+}
+
+.project-links a:hover {
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   6. CONTACTO E FOOTER
+   ========================================================================== */
+#contacto {
+    text-align: center;
+    background-color: white;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#contacto h2 {
+    margin-bottom: 1rem;
+}
+
+.contact-links {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contact-links a {
+    font-size: 1.2rem;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+}
+
+.contact-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.contact-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Meu Portfólio Profissional</title>
+
+    <!-- Link para o ficheiro de estilos globais -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Link para o ficheiro de estilos mobile -->
+    <link rel="stylesheet" href="responsive.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVEGAÇÃO -->
+    <header>
+        <nav>
+            <div class="logo">Portfólio.</div>
+            <ul class="nav-links">
+                <li><a href="#sobre-mim">Sobre Mim</a></li>
+                <li><a href="#skills">Competências</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECÇÃO HERO (Apresentação Inicial) -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Olá, o meu nome é Rafael Figueiredo.</h1>
+            <h2>Sou finalista da licenciatura em Engenharia Informática na FCUL e Desenvolvedor de Web Pages.</h2>
+            <p>Construo soluções digitais, desde interfaces web dinâmicas a explorações em computação gráfica 3D.</p>
+            <a href="#projetos" class="cta-button">Ver os meus trabalhos</a>
+            <a href="#sobre-mim" class="cta-button">Sobre Mim</a>
+        </div>
+    </section>
+
+    <!-- SECÇÃO SOBRE MIM -->
+    <section id="sobre-mim">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <div class="sobre-content">
+                <p>Sou estudante na FCUL e encontro-me neste momento a finalizar a licenciatura em Engenharia
+                    Informática. Tenho uma paixão pela criação de páginas web, vulgos sites, que sirvam um
+                    propósito sendo visualmente apelativas aos olhos de quem as visita. O meu percurso ainda agora
+                    começou porém já tenho alguns projetos disponiveis para validação do
+                    meu trabalho, que podem ser acedidos <a href="#projetos">aqui</a>.
+                </p>
+                <p>Para além de nerd informático sou também um apaixonado pelo desporto e atleta de crossfit, com
+                    aspirações de terminar o curso TEEF na Manz e vir a ser treinador da modalidade. Dividindo o
+                    meu tempo tempo entre o desporto e a informática, e procurando juntar os dois mundos num só
+                    sempre que me for permitido.
+                </p>
+                <p>Neste momento, e a menos que algo mude a minha forma de pensar, quero que a informática seja um
+                    projeto
+                    de FreeLancing onde vendo os meus serviços fazendo o que gosto e satisfazendo sempre o cliente.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECÇÃO COMPETÊNCIAS -->
+    <section id="skills">
+        <div class="container">
+            <h2>Competências Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>HTML5 & CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend & Ferramentas</h3>
+                    <ul>
+                        <li>Node.js</li>
+                        <li>Git & GitHub</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Computação Gráfica</h3>
+                    <ul>
+                        <li>OpenGL</li>
+                        <li>Blender</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECÇÃO PROJETOS -->
+    <section id="projetos">
+        <div class="container">
+            <h2>Projetos em Destaque</h2>
+            <!-- Este contentor está vazio no HTML. 
+                 Os cartões dos projetos, como o Torrita ou o motor gráfico, 
+                 serão injetados aqui via JavaScript (main.js). -->
+            <div id="projects-container" class="projects-grid">
+                <div class="project-card">
+                    <img src="cesto_pao.jpeg" alt="Torrita">
+                    <div class="project-card-content">
+                        <h3><a href="https://rafafigas12.github.io/Torrita/" target="_blank" class="main-card-link">Site da Pastelaria Tórrita</a></h3>
+                        <p>Design e desenvolvimento de catálogo responsivo.</p>
+                        <div class="tech-tags"><span>HTML</span><span>CSS</span></div>
+                        <div class="project-links">
+                            <a href="https://github.com/rafafigas12/Torrita" target="_blank">GitHub</a>
+                            <a href="https://rafafigas12.github.io/Torrita/" target="_blank">Live</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECÇÃO CONTACTO -->
+    <section id="contacto">
+        <div class="container">
+            <h2>Vamos trabalhar juntos?</h2>
+            <p>Estou disponível para novas oportunidades, projetos ou apenas para trocar ideias.</p>
+            <div class="contact-links">
+                <a href="mailto:rafafigas@gmail.com">rafafigas@gmail.com</a>
+                <a href="https://www.instagram.com/rafafigas/" target="_blank">Instagram</a>
+                <a href="https://github.com/rafafigas12" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Rafael Figueiredo. Construído com HTML, CSS e JavaScript.</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <!-- Carregar os dados dos projetos primeiro -->
+    <script src="projectsData.js"></script>
+    <!-- Carregar a lógica da UI e a injeção do HTML depois -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
