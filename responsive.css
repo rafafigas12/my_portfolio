@@ -1,0 +1,268 @@
+/* ==========================================================================
+   RESPONSIVE STYLESHEET (responsive.css)
+   Adaptação para Telemóveis (Mobile), Tablets e Ecrãs Pequenos
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TABLETS & ECRÃS MÉDIOS (max-width: 992px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 992px) {
+    :root {
+        --container-width: 100%;
+    }
+
+    .container {
+        padding: 0 2rem;
+    }
+
+    #hero {
+        padding: 8rem 2rem 4rem 2rem;
+        min-height: auto;
+    }
+
+    .hero-content h1 {
+        font-size: 3.2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 4.5rem 0;
+    }
+
+    section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLETS PEQUENOS E TELEMÓVEIS EM MODO PAISAGEM (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+    /* Navegação */
+    header {
+        position: sticky;
+        top: 0;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 0.8rem;
+        padding: 1rem 1.5rem;
+        text-align: center;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    /* Hero Section */
+    #hero {
+        padding: 4rem 1.5rem 3rem 1.5rem;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin: 0 auto 2rem auto;
+    }
+
+    .hero-content .cta-button {
+        margin: 0.4rem;
+    }
+
+    /* Secção Sobre Mim */
+    .sobre-content p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .skill-category {
+        padding: 1.5rem;
+    }
+
+    /* Projetos Grid */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .project-card img {
+        height: 200px;
+    }
+
+    /* Contactos */
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+    }
+
+    .contact-links a {
+        font-size: 1.1rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. TELEMÓVEIS (MOBILE) (max-width: 576px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 576px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    /* Navegação Compacta */
+    nav {
+        padding: 0.8rem 1rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-links {
+        gap: 0.8rem;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+
+    /* Secções */
+    section {
+        padding: 3.5rem 0;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.8rem;
+        text-align: center;
+    }
+
+    /* Hero */
+    #hero {
+        padding: 3rem 1rem 2.5rem 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.1rem;
+        letter-spacing: -1px;
+        line-height: 1.2;
+    }
+
+    .hero-content h2 {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    .hero-content .cta-button {
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0;
+        text-align: center;
+        padding: 0.85rem 1.5rem;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    /* Projetos */
+    .project-card-content {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+    }
+
+    .tech-tags span {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+    }
+
+    /* Contactos & Footer */
+    #contacto p {
+        font-size: 0.95rem;
+    }
+
+    .contact-links a {
+        font-size: 1rem;
+        word-break: break-word;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. ECRÃS EXTRA PEQUENOS (max-width: 380px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 380px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        gap: 0.5rem 0.8rem;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+}
